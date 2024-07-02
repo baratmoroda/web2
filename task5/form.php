@@ -46,6 +46,10 @@
         <input class="line" name="email" value="<?php print htmlspecialchars($values['email']); ?>" />
         <?php if ($errors['email1']) {print $messages['email1'];} else if ($errors['email2']) {print $messages['email2'];}?>
       </div>
+
+
+
+  
       <div class="form-item">
         <div class="date">
           <span <?php if ($errors['year1'] || $errors['year2']) {print 'class="error"';} ?>>Год рождения:</span>
@@ -61,6 +65,10 @@
             ?>
           </select>
         </div>
+
+
+
+        
         <?php if ($errors['year1']) {print $messages['year1'];} else if ($errors['year2']) {print $messages['year2'];}?>  
       </div>
       <div class="form-item">
@@ -77,10 +85,35 @@
           </li>
         </ul>
       </div>
+
+
+
+
+  
       <div class="form-item">
         <p <?php if ($errors['languages1'] || $errors['languages2']) {print 'class="error"';} ?>>Выбери любимые<br>языки программирования:</p>
         <?php if ($errors['languages1']) {print $messages['languages1'];} else if ($errors['languages2']) {print $messages['languages2'];}?>
         <ul>
+
+           <label for="lang">Любимый язык прграммирования</label>
+ <br>	
+ <select id="lang" name="pr" multiple>
+ <option value="pascal">Pascal</option>
+ <option value="c">C</option>
+ <option value="cpp">C++</option>
+ <option value="javascript">JavaScript</option>
+ <option value="php">PHP</option>
+ <option value="python">Python</option>
+ <option value="java">Java</option>
+ <option value="haskell">Haskell</option>
+ <option value="clojure">Clojure</option>
+ <option value="prolog">Prolog</option>
+ <option value="scala">Scala</option>
+ </select>
+ <br>
+
+
+          
           <li>
             <input type="checkbox" id="Pascal" name="languages[]" value=1 <?php if (isset($values['languages']) && !empty($values['languages']) && in_array(1, unserialize($values['languages']))) {print 'checked';}?>>
             <label for="Pascal">Pascal</label>
@@ -127,6 +160,10 @@
           </li>
         </ul> 
       </div>
+
+
+
+  
       <div class="form-item">
         <p class="big-text <?php if ($errors['biography1'] || $errors['biography2']) {print 'error';} ?>">Расскажи о себе:</p>
         <?php if ($errors['biography1']) {print $messages['biography1'];} else if ($errors['biography2']) {print $messages['biography2'];}?>
